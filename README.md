@@ -1,27 +1,14 @@
-# TestApp
+# Exemplu de testare a unei componente
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+## Context
 
-## Development server
+Avem un meniu cu trei acțiuni numite true, partial și false, și două statusuri: status1 și status2.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Daca status1 == true && status2 == true => actiunea true este activată, restul sunt disabled
+Daca status1 == true && status2 == false || status1 == false && status2 == true => actiunea partial este activată, restul sunt disabled
+Daca status1 == false && status2 == false => actiunea false este activată, restul sunt disabled
+Actiunea enabled va fi prima in lista, urmata de restul sortate in ordine alfabetica
+## Teste
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+In fisierul `app.component.spec.ts` gasim cate un test pentru verifica fiecare situatie descrisa anterior => 4 teste.
+Fiecare test verifica daca actiunea este enabled, daca aceasta ocupa prima pozitie in meniu si daca urmatoarele actiuni se afla in continuarea ei, in ordine alfabetica.
