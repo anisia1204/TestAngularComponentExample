@@ -30,8 +30,6 @@ export class ActionSorter {
   }
 
   private static pushTheRestOfTheActions(actions: ActionModel[], actionLabel: string) {
-    const collator = new Intl.Collator();
-
     const index = actions.findIndex(action => action.label === actionLabel);
     if (index !== -1) {
       actions

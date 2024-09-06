@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {ActionModel} from "./action.model";
 import {actions} from "./action-list";
 import {AppService} from "./app.service";
